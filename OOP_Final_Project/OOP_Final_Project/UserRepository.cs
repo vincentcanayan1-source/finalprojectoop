@@ -40,7 +40,7 @@ namespace OOP_Final_Project
                     // Update the "IsReturned" field for the specific user
                     var result = connection.Execute(
                         "UPDATE users SET IsReturned = ? WHERE Id = ?",
-                        user.IsReturned ? 1 : 0,  // Store 1 for true, 0 for false
+                        user.Returned ? 1 : 0,  // Store 1 for true, 0 for false
                         user.Id
                     );
 

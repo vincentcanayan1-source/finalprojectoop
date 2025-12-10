@@ -49,7 +49,7 @@ namespace OOP_Final_Project
                 userToSave.BorrowedItems = borroweditems;
                 userToSave.BorrowDate = borrowdate;
                 userToSave.BorrowNumber = int.Parse(borrowQuantity);
-                userToSave.IsReturned = false;
+                userToSave.Returned = false;
 
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);

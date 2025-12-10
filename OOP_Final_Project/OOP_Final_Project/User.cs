@@ -16,6 +16,6 @@ namespace OOP_Final_Project
         public int BorrowNumber { get; set; }
         public string BorrowedItems { get; set; }
         public string BorrowDate { get; set; }
-        public bool IsReturned { get; set; }
+        public bool Returned { get; set; }
     }
 }

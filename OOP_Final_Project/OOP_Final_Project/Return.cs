@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,65 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace OOP_Final_Project
 {
     public partial class Return : Form
     {
-        private int selectedRowID = -1;
-
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                // Ensure that the clicked row index is valid (not the header row)
-                if (e.RowIndex >= 0)
-                {
-                    selectedRowID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
-                    // Get the clicked row
-                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                    // Populate the textboxes with data from the clicked row
-                    textBoxUsername.Text = row.Cells["Name"].Value.ToString();
-                    TextBoxQuantity.Text = row.Cells["Quantity"].Value.ToString();
-                    comboBox1.Text = row.Cells["Item"].Value.ToString();
-                    dateTimePicker1.Text = row.Cells["Date"].Value.ToString();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                // Display an error message in case of failure
-                MessageBox.Show(ex.Message);
-            }
-        }
-        UserRepository repository = new UserRepository();
         public Return()
         {
             InitializeComponent();
-            LoadUzerToDataGridView();
         }
 
-        private void LoadUzerToDataGridView()
-        {
-            List<User> users = repository.GetAll();
-            dataGridView1.DataSource = users;
-
-        }
-
-        private void ListUsersForm_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show("Welcome to user manager",
-                "Greetings",
-
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Information);
 
 
 
 
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -89,19 +48,65 @@ namespace OOP_Final_Project
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
+            try { 
+            var name = textBoxUsername.Text;
+            var item= comboBox1.Text;
+            int quantity= int.Parse(TextBoxQuantity.Text);
+            var date= DateTime.Now;
 
+            var db = new SQLiteConnection(Path.Combine(
+                Environment.GetFolderPath(
+                    Environment.SpecialFolder.MyDocuments),
+                "userdata.db"));
 
-            if (selectedRowID >= 0)
-            {
-                // Create the user object with updated information
-                var user = new User
+            var comparecolumn = db.Table<User>()
+              .FirstOrDefault(x => x.Username == name);
+
+            int rowId = comparecolumn.Id;
+            var comparerow = db.Find<User>(rowId);
+
+                if (item != null)
                 {
-                    Id = selectedRowID,  // Use the selected row's ID
-                    IsReturned = true     // Mark the item as returned
-                };
-                
+                    if (comparerow.BorrowedItems == item)
+                    {
+                        if (comparerow.BorrowNumber >= quantity)
+                        {
+                            int unreturned = comparerow.BorrowNumber - quantity;
+                            MessageBox.Show("you have a remaining " + unreturned + " " + comparerow.BorrowedItems + " unreturned");
+                            comparerow.BorrowNumber = unreturned;
+                            if (unreturned == 0)
+                            {
 
+                                comparerow.Returned = true;
+                                db.Update(comparerow);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("your returning more than what you borrowed!! try again.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill up the form correctly");
+                    }
+
+                }
+                   
             }
+            catch (SQLiteException ex)
+            {
+             
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+              
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+
+
         }
     }
 }
