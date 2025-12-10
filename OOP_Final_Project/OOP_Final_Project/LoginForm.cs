@@ -10,14 +10,10 @@ namespace OOP_Final_Project
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-
-            string correctUser = "admin";
-            string correctPass = "1234";
-
-            if (username == correctUser && password == correctPass)
+            if ((txtUsername.Text == "admin" && txtPassword.Text == "123") ||
+                       (txtUsername.Text == "radley" && txtPassword.Text == "123") ||
+                       (txtUsername.Text == "hans" && txtPassword.Text == "123") ||
+                       (txtUsername.Text == "vincent" && txtPassword.Text == "123"))
             {
                 MessageBox.Show("Login Successful!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

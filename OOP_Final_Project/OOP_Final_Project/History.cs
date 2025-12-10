@@ -16,7 +16,6 @@ namespace OOP_Final_Project
         public History()
         {
             InitializeComponent();
-
             LoadUzerToDataGridView();
         }
 
@@ -24,6 +23,7 @@ namespace OOP_Final_Project
         {
             List<User> users = repository.GetAll();
             dataGridView1.DataSource = users;
+
         }
 
         private void ListUsersForm_Load(object sender, EventArgs e)
@@ -46,6 +46,11 @@ namespace OOP_Final_Project
             Selection form2 = new Selection();
             form2.Show();
             this.Hide();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

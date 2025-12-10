@@ -32,6 +32,7 @@ namespace OOP_Final_Project
             string borroweditems = comboBox1.Text;
             string borrowdate = dateTimePicker1.Text;
             string borrowQuantity = txtBoxQuantity.Text;
+            bool isReturned= false;
             if (string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(borroweditems) ||
                 string.IsNullOrWhiteSpace(borrowdate) ||
@@ -48,24 +49,17 @@ namespace OOP_Final_Project
                 userToSave.BorrowedItems = borroweditems;
                 userToSave.BorrowDate = borrowdate;
                 userToSave.BorrowNumber = int.Parse(borrowQuantity);
+                userToSave.IsReturned = false;
 
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);
 
-                if (isSaved)
-                {
-                    MessageBox.Show("Boy na-saved!", "Successful",
+               
+
+                   
 
 
-                   MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-                    textBoxUsername.Clear();
-
-
-
-                }
+                
             }
             Selection form2 = new Selection();
             form2.Show();

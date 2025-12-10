@@ -12,9 +12,10 @@ namespace OOP_Final_Project
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Username { get; set; }
-        public string Password { get; set; }
+        
         public int BorrowNumber { get; set; }
         public string BorrowedItems { get; set; }
         public string BorrowDate { get; set; }
+        public bool IsReturned { get; set; }
     }
 }

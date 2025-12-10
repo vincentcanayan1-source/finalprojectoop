@@ -9,6 +9,7 @@ namespace OOP_Final_Project
 {
     public class UserRepository
     {
+            
         private readonly ISQLiteConnection _connection;
 
         public UserRepository()
@@ -30,6 +31,29 @@ namespace OOP_Final_Project
             _connection.Insert(user);
             return true;
         }
+        public bool Update(User user)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection("userdata.db"))
+                {
+                    // Update the "IsReturned" field for the specific user
+                    var result = connection.Execute(
+                        "UPDATE users SET IsReturned = ? WHERE Id = ?",
+                        user.IsReturned ? 1 : 0,  // Store 1 for true, 0 for false
+                        user.Id
+                    );
+
+                    return result > 0;  // Return true if one row was updated
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log it or show message)
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
 
         public List<User> GetAll()
         {
@@ -41,5 +65,7 @@ namespace OOP_Final_Project
         {
             return _connection.Find<User>(id);
         }
+
+
     }
 }
