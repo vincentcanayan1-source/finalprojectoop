@@ -27,7 +27,6 @@ namespace OOP_Final_Project
         }
         public bool Add(User user)
         {
-
             _connection.Insert(user);
             return true;
         }
@@ -36,20 +35,18 @@ namespace OOP_Final_Project
             try
             {
                 using (var connection = new SQLiteConnection("userdata.db"))
-                {
-                    // Update the "IsReturned" field for the specific user
+                {                   
                     var result = connection.Execute(
                         "UPDATE users SET IsReturned = ? WHERE Id = ?",
-                        user.Returned ? 1 : 0,  // Store 1 for true, 0 for false
+                        user.Returned ? 1 : 0,  
                         user.Id
                     );
 
-                    return result > 0;  // Return true if one row was updated
+                    return result > 0;  
                 }
             }
             catch (Exception ex)
-            {
-                // Handle exception (log it or show message)
+            {      
                 Console.WriteLine(ex.Message);
                 return false;
             }
