@@ -1,1 +1,2 @@
 # finalprojectoop
+The 5g Equipment Borrowing System is a desktop application designed to able to track down borrowed Equipment, allowing customers to Borrow equipment's and in mobile devices. The system will provide customers with real-time information and navigation assistance. The Borrowing System features a user-friendly graphical interface, enabling customers to seamlessly explore what equipment to Borrow or return.
