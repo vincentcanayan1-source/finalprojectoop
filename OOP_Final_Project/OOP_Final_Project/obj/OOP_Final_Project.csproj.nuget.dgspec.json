@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VincentCanayan\\Source\\Repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj": {}
+    "C:\\Users\\VincentCanayan\\source\\repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VincentCanayan\\Source\\Repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj": {
+    "C:\\Users\\VincentCanayan\\source\\repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VincentCanayan\\Source\\Repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj",
+        "projectUniqueName": "C:\\Users\\VincentCanayan\\source\\repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj",
         "projectName": "OOP_Final_Project",
-        "projectPath": "C:\\Users\\VincentCanayan\\Source\\Repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj",
+        "projectPath": "C:\\Users\\VincentCanayan\\source\\repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\OOP_Final_Project.csproj",
         "packagesPath": "C:\\Users\\VincentCanayan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VincentCanayan\\Source\\Repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\obj\\",
+        "outputPath": "C:\\Users\\VincentCanayan\\source\\repos\\finalprojectoop\\OOP_Final_Project\\OOP_Final_Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VincentCanayan\\AppData\\Roaming\\NuGet\\NuGet.Config",

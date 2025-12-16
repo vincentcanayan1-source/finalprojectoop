@@ -41,7 +41,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.BackColor = Color.LavenderBlush;
             groupBox1.Controls.Add(btnCancel);
             groupBox1.Controls.Add(btnLogin);
             groupBox1.Controls.Add(txtPassword);
@@ -49,20 +49,17 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(133, 93);
-            groupBox1.Margin = new Padding(4, 5, 4, 5);
+            groupBox1.Location = new Point(546, 56);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(431, 605);
+            groupBox1.Size = new Size(319, 327);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(236, 390);
-            btnCancel.Margin = new Padding(4, 5, 4, 5);
+            btnCancel.Location = new Point(165, 234);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(146, 77);
+            btnCancel.Size = new Size(102, 46);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -70,10 +67,9 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(37, 390);
-            btnLogin.Margin = new Padding(4, 5, 4, 5);
+            btnLogin.Location = new Point(26, 234);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(146, 77);
+            btnLogin.Size = new Size(102, 46);
             btnLogin.TabIndex = 5;
             btnLogin.Text = "LogIn";
             btnLogin.UseVisualStyleBackColor = true;
@@ -81,28 +77,25 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(157, 247);
-            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Location = new Point(110, 148);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(238, 31);
+            txtPassword.Size = new Size(168, 23);
             txtPassword.TabIndex = 4;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(157, 160);
-            txtUsername.Margin = new Padding(4, 5, 4, 5);
+            txtUsername.Location = new Point(110, 96);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(238, 31);
+            txtUsername.Size = new Size(168, 23);
             txtUsername.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(11, 247);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(8, 148);
             label3.Name = "label3";
-            label3.Size = new Size(123, 32);
+            label3.Size = new Size(83, 21);
             label3.TabIndex = 2;
             label3.Text = "Password: ";
             // 
@@ -110,31 +103,29 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(10, 160);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(7, 96);
             label2.Name = "label2";
-            label2.Size = new Size(126, 32);
+            label2.Size = new Size(84, 21);
             label2.TabIndex = 1;
             label2.Text = "Username:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(106, 32);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Font = new Font("Stencil", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(63, 19);
             label1.Name = "label1";
-            label1.Size = new Size(252, 48);
+            label1.Size = new Size(189, 38);
             label1.TabIndex = 0;
             label1.Text = "BORROWER";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(677, 802);
+            ClientSize = new Size(1044, 620);
             Controls.Add(groupBox1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "LoginForm";
             Text = "LoginForm";
             groupBox1.ResumeLayout(false);
