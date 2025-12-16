@@ -54,12 +54,6 @@ namespace OOP_Final_Project
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);
 
-
-
-
-
-
-
             }
             Selection form2 = new Selection();
             form2.Show();

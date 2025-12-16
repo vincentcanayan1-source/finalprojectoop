@@ -5,6 +5,7 @@ namespace OOP_Final_Project
         public LoginForm()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
