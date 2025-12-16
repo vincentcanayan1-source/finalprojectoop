@@ -30,10 +30,8 @@
         {
             groupBox1 = new GroupBox();
             buttonReturn = new Button();
-            dataGridView1 = new DataGridView();
             dateTimePicker1 = new DateTimePicker();
             label5 = new Label();
-            label4 = new Label();
             label3 = new Label();
             TextBoxQuantity = new TextBox();
             label2 = new Label();
@@ -43,17 +41,14 @@
             button1 = new Button();
             button6 = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ActiveCaption;
             groupBox1.Controls.Add(buttonReturn);
-            groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(TextBoxQuantity);
             groupBox1.Controls.Add(label2);
@@ -62,97 +57,73 @@
             groupBox1.Controls.Add(textBoxUsername);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(button6);
-            groupBox1.Location = new Point(116, 20);
-            groupBox1.Margin = new Padding(4, 5, 4, 5);
+            groupBox1.Location = new Point(81, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(647, 470);
+            groupBox1.Size = new Size(453, 282);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
-            
             // 
             // buttonReturn
             // 
-            buttonReturn.Location = new Point(424, 365);
+            buttonReturn.Location = new Point(297, 219);
+            buttonReturn.Margin = new Padding(2);
             buttonReturn.Name = "buttonReturn";
-            buttonReturn.Size = new Size(166, 73);
+            buttonReturn.Size = new Size(116, 44);
             buttonReturn.TabIndex = 19;
             buttonReturn.Text = "return";
             buttonReturn.UseVisualStyleBackColor = true;
             buttonReturn.Click += buttonReturn_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(37, 242);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(566, 117);
-            dataGridView1.TabIndex = 18;
-            // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(166, 196);
+            dateTimePicker1.Location = new Point(116, 118);
+            dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.Size = new Size(211, 23);
             dateTimePicker1.TabIndex = 17;
+            dateTimePicker1.Visible = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(235, 14);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(164, 8);
             label5.Name = "label5";
-            label5.Size = new Size(154, 55);
+            label5.Size = new Size(103, 37);
             label5.TabIndex = 15;
             label5.Text = "Return";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(105, 196);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 25);
-            label4.TabIndex = 14;
-            label4.Text = "Date:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(74, 157);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(52, 94);
             label3.Name = "label3";
-            label3.Size = new Size(84, 25);
+            label3.Size = new Size(56, 15);
             label3.TabIndex = 13;
             label3.Text = "Quantity:";
             // 
             // TextBoxQuantity
             // 
-            TextBoxQuantity.Location = new Point(166, 157);
-            TextBoxQuantity.Margin = new Padding(4, 5, 4, 5);
+            TextBoxQuantity.Location = new Point(116, 94);
             TextBoxQuantity.Name = "TextBoxQuantity";
-            TextBoxQuantity.Size = new Size(300, 31);
+            TextBoxQuantity.Size = new Size(211, 23);
             TextBoxQuantity.TabIndex = 9;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(106, 115);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(74, 69);
             label2.Name = "label2";
-            label2.Size = new Size(52, 25);
+            label2.Size = new Size(34, 15);
             label2.TabIndex = 11;
             label2.Text = "Item:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(95, 74);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(66, 44);
             label1.Name = "label1";
-            label1.Size = new Size(63, 25);
+            label1.Size = new Size(42, 15);
             label1.TabIndex = 10;
             label1.Text = "Name:";
             // 
@@ -160,26 +131,23 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Basket ball", "Soccer ball", "Volley ball", "Base ball", "Tennis ball" });
-            comboBox1.Location = new Point(166, 115);
-            comboBox1.Margin = new Padding(4, 5, 4, 5);
+            comboBox1.Location = new Point(116, 69);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(300, 33);
+            comboBox1.Size = new Size(211, 23);
             comboBox1.TabIndex = 9;
             // 
             // textBoxUsername
             // 
-            textBoxUsername.Location = new Point(166, 74);
-            textBoxUsername.Margin = new Padding(4, 5, 4, 5);
+            textBoxUsername.Location = new Point(116, 44);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(300, 31);
+            textBoxUsername.Size = new Size(211, 23);
             textBoxUsername.TabIndex = 8;
             // 
             // button1
             // 
-            button1.Location = new Point(235, 365);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(164, 219);
             button1.Name = "button1";
-            button1.Size = new Size(166, 73);
+            button1.Size = new Size(116, 44);
             button1.TabIndex = 7;
             button1.Text = "Okay";
             button1.UseVisualStyleBackColor = true;
@@ -187,10 +155,9 @@
             // 
             // button6
             // 
-            button6.Location = new Point(54, 367);
-            button6.Margin = new Padding(4, 5, 4, 5);
+            button6.Location = new Point(38, 220);
             button6.Name = "button6";
-            button6.Size = new Size(166, 73);
+            button6.Size = new Size(116, 44);
             button6.TabIndex = 6;
             button6.Text = "Cancel";
             button6.UseVisualStyleBackColor = true;
@@ -198,16 +165,14 @@
             // 
             // Return
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(886, 648);
+            ClientSize = new Size(620, 389);
             Controls.Add(groupBox1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Return";
             Text = "Return";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -215,7 +180,6 @@
 
         private GroupBox groupBox1;
         private Label label5;
-        private Label label4;
         private Label label3;
         private TextBox TextBoxQuantity;
         private Label label2;
@@ -224,8 +188,7 @@
         private TextBox textBoxUsername;
         private Button button1;
         private Button button6;
-        private DateTimePicker dateTimePicker1;
-        private DataGridView dataGridView1;
         private Button buttonReturn;
+        private DateTimePicker dateTimePicker1;
     }
 }

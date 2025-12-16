@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace OOP_Final_Project
 {
@@ -51,6 +53,34 @@ namespace OOP_Final_Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+       
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.");
+                return;
+            }
+
+            var result = MessageBox.Show(
+                "Are you sure you want to delete this record?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+
+            var selectedUser = (User)dataGridView1.SelectedRows[0].DataBoundItem;
+
+            repository.Delete(selectedUser.Id);
+
+
+            dataGridView1.DataSource = repository.GetAll();
+
 
         }
     }

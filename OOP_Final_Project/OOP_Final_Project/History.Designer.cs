@@ -32,6 +32,7 @@
             dataGridView1 = new DataGridView();
             Ok = new Button();
             label1 = new Label();
+            buttonDelete = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -39,33 +40,32 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.Controls.Add(buttonDelete);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(Ok);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(79, 47);
-            groupBox1.Margin = new Padding(4, 5, 4, 5);
+            groupBox1.Location = new Point(55, 28);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(767, 572);
+            groupBox1.Size = new Size(537, 343);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(32, 139);
+            dataGridView1.Location = new Point(22, 83);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(649, 270);
+            dataGridView1.Size = new Size(454, 162);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Ok
             // 
-            Ok.Location = new Point(312, 427);
-            Ok.Margin = new Padding(4, 5, 4, 5);
+            Ok.Location = new Point(218, 256);
             Ok.Name = "Ok";
-            Ok.Size = new Size(97, 70);
+            Ok.Size = new Size(68, 42);
             Ok.TabIndex = 1;
             Ok.Text = "Ok";
             Ok.UseVisualStyleBackColor = true;
@@ -75,20 +75,28 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(278, 61);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(195, 37);
             label1.Name = "label1";
-            label1.Size = new Size(166, 55);
+            label1.Size = new Size(113, 37);
             label1.TabIndex = 1;
             label1.Text = "History";
             // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(319, 256);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(68, 42);
+            buttonDelete.TabIndex = 3;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
+            // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 750);
+            ClientSize = new Size(687, 450);
             Controls.Add(groupBox1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "History";
             Text = "History";
             groupBox1.ResumeLayout(false);
@@ -103,5 +111,6 @@
         private Label label1;
         private Button Ok;
         private DataGridView dataGridView1;
+        private Button buttonDelete;
     }
 }

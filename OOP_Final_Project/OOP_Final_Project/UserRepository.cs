@@ -65,6 +65,11 @@ namespace OOP_Final_Project
         {
             return _connection.Find<User>(id);
         }
+        public void Delete(int id)
+        {
+            _connection.Delete<User>(id);
+        }
+
 
 
     }
