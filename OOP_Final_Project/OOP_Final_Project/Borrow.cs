@@ -32,7 +32,7 @@ namespace OOP_Final_Project
             string borroweditems = comboBox1.Text;
             string borrowdate = dateTimePicker1.Text;
             string borrowQuantity = txtBoxQuantity.Text;
-            bool isReturned= false;
+            bool isReturned = false;
             if (string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(borroweditems) ||
                 string.IsNullOrWhiteSpace(borrowdate) ||
@@ -54,18 +54,23 @@ namespace OOP_Final_Project
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);
 
-               
-
-                   
 
 
-                
+
+
+
+
             }
             Selection form2 = new Selection();
             form2.Show();
             this.Hide();
             form2.FormClosed += (s, args) => this.Close();
-            
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

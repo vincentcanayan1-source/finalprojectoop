@@ -48,68 +48,67 @@ namespace OOP_Final_Project
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            try { 
-            var name = textBoxUsername.Text;
-            var item= comboBox1.Text;
-            int quantity= int.Parse(TextBoxQuantity.Text);
-            var date= DateTime.Now;
+            try
+            {
+                var name = textBoxUsername.Text;
+                var item = comboBox1.Text;
 
-            var db = new SQLiteConnection(Path.Combine(
-                Environment.GetFolderPath(
-                    Environment.SpecialFolder.MyDocuments),
-                "userdata.db"));
-
-            var comparecolumn = db.Table<User>()
-              .FirstOrDefault(x => x.Username == name);
-
-                var rowId = comparecolumn.Id;
-            var comparerow = db.Find<User>(rowId);
-                if (rowId == comparecolumn.Id)
+                if (!int.TryParse(TextBoxQuantity.Text, out int quantity))
                 {
-                    if (item != null)
-                    {
-                        if (comparerow.BorrowedItems == item)
-                        {
-                            if (comparerow.BorrowNumber >= quantity)
-                            {
-                                int unreturned = comparerow.BorrowNumber - quantity;
-                                MessageBox.Show("you have a remaining " + unreturned + " " + comparerow.BorrowedItems + " unreturned");
-                                comparerow.BorrowNumber = unreturned;
-                                if (unreturned == 0)
-                                {
-
-                                    comparerow.Returned = true;
-                                    db.Update(comparerow);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("your returning more than what you borrowed!! try again.");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please fill up the form correctly");
-                        }
-
-                    }
+                    MessageBox.Show("Invalid quantity");
+                    return;
                 }
-                else
+
+                var db = new SQLiteConnection(Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    "userdata.db"));
+
+                var user = db.Table<User>()
+                             .FirstOrDefault(x => x.Username == name);
+
+                if (user == null)
                 {
-                    MessageBox.Show("there is no data about you");
+                    MessageBox.Show("There is no data about you");
+                    return;
                 }
-                   
+
+                if (string.IsNullOrWhiteSpace(item))
+                {
+                    MessageBox.Show("Please select an item");
+                    return;
+                }
+
+                if (user.BorrowedItems != item)
+                {
+                    MessageBox.Show("Please fill up the form correctly");
+                    return;
+                }
+
+                if (user.BorrowNumber < quantity)
+                {
+                    MessageBox.Show("You're returning more than what you borrowed!");
+                    return;
+                }
+
+                int unreturned = user.BorrowNumber - quantity;
+                user.BorrowNumber = unreturned;
+                user.Returned = (unreturned == 0);
+
+                db.Update(user);
+
+                MessageBox.Show(
+                    $"You have {unreturned} {user.BorrowedItems} unreturned"
+                );
             }
             catch (SQLiteException ex)
             {
-             
                 MessageBox.Show("Database error: " + ex.Message);
             }
             catch (Exception ex)
             {
-              
                 MessageBox.Show("Error: " + ex.Message);
             }
+           
 
 
 
